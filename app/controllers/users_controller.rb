@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   # User authentication
   def create
     puts "params = #{params}"
-    user = User.new(name: params[:name], password: params[:password])
+    user = User.new(name: params[:user][:name], password: params[:user][:password])
 		if user.save
 			redirect_to "/index"
 		else
